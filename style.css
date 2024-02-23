@@ -1,0 +1,305 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{font-family: sans-serif;}
+/* stile app inizio*/
+#app
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+/* stile app fine*/
+/* stile background inizio*/
+#back_top
+{
+    width: 100%;
+    height:150px;
+    background-color: #009688;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+#back_bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-color: #dbdbd2;
+    z-index: -1;
+}
+/* stile background fine */
+/* stile container app inizio*/
+
+#ui_container {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 25px 200px; 
+
+}
+#ui
+{
+    /* width: 100%; */
+    height: 100%;
+    margin: 0 auto;
+    
+    background-color:white;
+    display: flex;
+
+}
+#ui > *
+{
+    /* border: dotted 1px red; */
+}
+/* stile container app fine*/
+/* stile sidebar inizio */
+#sidebar
+{
+    width: 30%;
+    height: 100%;
+}
+/* stile sezione user totale  inizio */
+#container_user
+{
+    background-color: #EAEAEA;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+/* inizio sezione user */
+#user
+{
+    display: flex;
+    align-items: center;
+}
+.immagine
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#user strong
+{
+    font-size: 15px;
+    
+}
+#user_button
+{
+    display: flex;
+    gap: 15px;
+    color: #B1B1B1;
+    
+}
+/* fine sezione user */
+/* sezione notfiche */
+#section_notification
+{
+    padding: 16px 20px;
+    background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+    gap: 10px
+    ;
+}
+#section_notification #bell
+{
+    padding: 12px;
+    background-color:white ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bell .fa-solid
+{
+    font-size: 20px;
+    color: #8EDAFC;
+}
+/* sezione messaggio notifiche */
+#text_notification
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+}
+#text_notification a
+{
+    color: #528096;
+}
+/* sezione messaggio notifiche fine*/
+/* sezione notfiche fine*/
+/* sezione ricerca inizio */
+#section_search
+{
+    padding: 10px;
+    display: flex;
+    background-color: #FAFAFA;
+}
+#section_search button
+{
+    background-color: white;
+    border: #e9ebeb solid 1px;
+    cursor: pointer;
+}
+#section_search button .fa-solid
+{
+    padding: 9px 30px;
+    color: #B1B1B1;
+    
+}
+#section_search input
+{
+    flex-grow: 1;
+    padding: 10px;
+    border: #e9ebeb solid 1px;
+}
+
+/* sezione ricerca fine */
+/* sezione chat inizio */
+#chat_pepole
+{
+    
+    
+}
+#chat{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    /* height: 80px; */
+    padding: 10px 20px;
+    border-bottom: #B1B1B1 1px solid ;
+}
+#picture_user img
+{
+    background-color: white;
+}
+#text
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#time
+{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 9px;
+}
+/* sezione chat fine */
+/* stile sezione user totale fine */
+/* stile sidebar fine */
+/* stile chat_container */
+#chat_container
+{
+    width:70%;
+    height: 100%;
+}
+#chat_profile
+{
+    background-color: #EAEAEA;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 10px;
+}
+#chat_profile_user
+{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+#info_users
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+    ;
+}
+#info_users div
+{
+    font-size: 14px;
+}
+#info_users span
+{
+    font-size: 10px;
+    color: #94827A;
+}
+#chat_profile_message
+{
+    width: 100%;
+    height: calc(100% - 75px - 75px);
+    background-image: url(./img/mine.jpg);
+
+}
+#messaggistica
+{
+    max-width: 820px;
+    padding:55px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+}
+.messaggio
+{
+    max-width:300px;
+    padding: 18px;
+    position: relative;
+    border-radius: 9px;
+}
+.send
+{
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+.recived
+{
+    background-color: white;
+    align-self: flex-start;
+}
+#ora
+{
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    font-size: 8px;
+    color: #C1C1BB;
+}
+
+
+
+#message_bar
+{
+    display: flex;
+    padding: 10px 40px;
+    gap: 40px;
+    align-items: center;
+    background-color: #F3EEEA;
+    height: 75px;
+}
+#message_bar .fa-regular,#message_bar .fa-solid
+{
+    font-size: 24px;
+    color: #7A6D69;
+}
+#message_bar input
+{
+    flex-grow: 1;
+    padding: 20px 18px;
+    border-radius: 6px;
+    border: transparent;
+}
+/* stile chat_container fine*/
