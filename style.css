@@ -175,7 +175,7 @@ body{font-family: sans-serif;}
     gap: 20px;
     align-items: center;
     position: relative;
-    /* height: 80px; */
+    height: 80px;
     padding: 10px 20px;
     border-bottom: #B1B1B1 1px solid ;
 }
