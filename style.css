@@ -260,12 +260,12 @@ body{font-family: sans-serif;}
     position: relative;
     border-radius: 9px;
 }
-.send
+.sent
 {
     background-color: #D5F9BA;
     align-self: flex-end;
 }
-.recived
+.received
 {
     background-color: white;
     align-self: flex-start;
@@ -300,3 +300,7 @@ body{font-family: sans-serif;}
     border: transparent;
 }
 /* stile chat_container fine*/
+.active
+{
+    background-color: #e9ebeb;
+}

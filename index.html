@@ -52,12 +52,18 @@
                         <input type="search" placeholder="cerca o inizia una nuova chat">
                     </div>
                     <div id="chat_pepole">
-                        <div v-for="contatti  in contacts" id="chat" :key="index">
-                            <!-- <div id="picture_user"> -->
+                        <!-- @click="classeattiva(index)" usato per aggiungere osservatore, :class="contatti== scheda_attiva ? 'active' :' ' " classe dinamica con condizione associata-->
+                        <div 
+                            
+                            
+                            @click="classeattiva(index)"
+                            :class="contatti== scheda_attiva ? 'active' :' ' "  
+                            v-for="(contatti,index)  in contacts" id="chat" :key="index">
+                            
                                 <img class="immagine" :src="contatti.avatar" alt="immagine1">
-                            <!-- </div> -->
+                            
                             <div id="text">
-                                <div id="name_users">{{ contatti.name }}</div>
+                                <div id="name_users"><strong>{{ contatti.name }}</strong></div>
                                 <div id="last_message">Ultimo messaggio inviato</div>
                                 <div id="time">12:00</div>
                             </div>
@@ -68,9 +74,9 @@
                 <div id="chat_container">
                     <div id="chat_profile">
                         <div id="chat_profile_user">
-                            <img class="immagine" src="./img/avatar_1.jpg" alt="">
+                            <img class="immagine" :src="scheda_attiva.avatar" alt="">
                             <div id="info_users">
-                                <div><strong>Michele</strong></div>
+                                <div><strong>{{scheda_attiva.name}}</strong></div>
                                 <span>Ultimo accesso oggi alle 12:00</span>
                                 
                             </div>
@@ -83,20 +89,17 @@
 
                     </div>
                     <div id="chat_profile_message">
+                        <!-- iteriamo all'interno della classe attiva dove sono i messaggi-->
                         <div id="messaggistica">
-                            <div class="messaggio send">
-                                <div id="testo_messaggio"><strong>Hai portato a spasso il cane?</strong></div>
-                                <div id="ora">12:00</div>
-                            </div>
-                            <div class="messaggio send">
-                                <div id="testo_messaggio"><strong>Ricordati di stendere i panni</strong></div>
-                                <div id="ora">12:00</div>
-                            </div>
-                            <div class="messaggio recived">
-                                <div id="testo_messaggio"><strong>Tutto fatto!</strong></div>
-                                <div id="ora">12:00</div>
+                            <div v-for="currentmessage in scheda_attiva.messages"  class="messaggio" :class="currentmessage.status">
+                                <!-- mostro in pagina in modo dinamico i messaggi all'interno di currentmessage della conversazione attiva -->
+                                <div>{{currentmessage.message}}</div>
+                                <!-- mostro in pagina in modo dinamico i messaggi all'interno di currentmessage della conversazione attiva -->
+                                <div id="ora">{{currentmessage.date}}</div>
+                                                        
                             </div>
                         </div>
+                        
                     </div>
                     <div id="message_bar">
                         <i class="fa-regular fa-face-smile"></i>

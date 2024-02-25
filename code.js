@@ -167,16 +167,25 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
             
 
-
+            scheda_attiva:{},
         }
     },
     mounted() {
+        // scheda da cui partiamo quando avviamo il programma
+        this.scheda_attiva= this.contacts[0]
         
     },
     methods: {
+        classeattiva(index)
+        {
+            // passiamo l'index della chat che passiamo 
+            // this.activeContactIndex = index;
+            this.scheda_attiva= this.contacts[index]
+
+        }
         
     },
 }).mount('#app');
