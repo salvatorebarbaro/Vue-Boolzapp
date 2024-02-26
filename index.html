@@ -48,10 +48,10 @@
 
                     </div>
                     <div id="section_search">
-                        <button>
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <button  @click="search_peapole(valueTosearch)">
+                            <i  class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="search" placeholder="cerca o inizia una nuova chat">
+                        <input v-model="valueTosearch" type="search" placeholder="cerca o inizia una nuova chat">
                     </div>
                     <div id="chat_pepole">
                         <!-- @click="classeattiva(index)" usato per aggiungere osservatore, :class="contatti== scheda_attiva ? 'active' :' ' " classe dinamica con condizione associata-->
@@ -66,8 +66,8 @@
                             
                             <div id="text">
                                 <div id="name_users"><strong>{{ contatti.name }}</strong></div>
-                                <div id="last_message">{{contatti.messages[contatti.messages.length-1].message}} {{contatti.messages[contatti.messages.length-1].date}}</div>
-                                <div id="time">12:00</div>
+                                <div id="last_message">{{contatti.messages[contatti.messages.length-1].message}}</div>
+                                <div id="time">{{contatti.messages[contatti.messages.length-1].date}}</div>
                             </div>
                         </div>
                         

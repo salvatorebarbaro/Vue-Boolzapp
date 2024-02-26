@@ -171,6 +171,7 @@ createApp({
             
             nuovo_messaggio_digitato:"",
             scheda_attiva:{},
+            valueTosearch:"",
         }
     },
     mounted() {
@@ -223,9 +224,31 @@ createApp({
         this.nuovo_messaggio_digitato=" ";
         
         },
-        search_peapole(nameTosearch)
+        search_peapole(valueTosearch)
         {
-            
+            // convertiamo tutto in minuscolo i valori del carattere che cerchiamo per evitare problemi
+            const lowerValueToSearch= valueTosearch.toLowerCase();
+
+            // scorre per tutti i contatti
+            for(let i=0;i<contacts.length;i++)
+    
+            {
+                // otteniamo il contatto su cui siamo dell'array dai contatti
+                const contact= this.contacts[i];
+
+                // conversione nome dell'utente corrente per fare un confronto
+                const lowername= this.contatti.name.toLowerCase();
+
+
+                if(lowername.include(lowerValueToSearch))
+                {
+                    contact.active=true;
+                }
+                else
+                {
+                    contact.active=false;
+                }
+            }
         }
 
         
