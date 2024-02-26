@@ -201,6 +201,27 @@ createApp({
                     date :window.luxon.DateTime.now().setLocale('it').toLocaleString(window.luxon.DateTime.DATETIME_SHORT)
 
                 })
+                // ritardo di tempo nella risposta che ci verra recapitata
+                // usiamo set timeout perchè ci permette di eseguire l'azione solo una volta
+                setTimeout(()=>
+                {
+                    this.scheda_attiva.messages.push
+                    ({
+                        // messaggio che vedremo
+                        message:'ok' ,
+                        // stato del messaggio
+                        status:'received',
+                         // data del messaggio usando la libreria luxon inserita nella pagina html
+                    //  abbiamo imposatto la localita in italiano
+                    // successivamente abbiamo impostato che ci restituisse la data abbreviata
+                    date :window.luxon.DateTime.now().setLocale('it').toLocaleString(window.luxon.DateTime.DATETIME_SHORT)
+
+                    })
+
+                },
+                1000)
+        this.nuovo_messaggio_digitato=" ";
+        
         }
         
     },
