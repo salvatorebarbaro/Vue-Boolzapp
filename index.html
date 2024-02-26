@@ -48,10 +48,10 @@
 
                     </div>
                     <div id="section_search">
-                        <button  @click="search_peapole(valueTosearch)">
+                        <button>
                             <i  class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input v-model="valueTosearch" type="search" placeholder="cerca o inizia una nuova chat">
+                        <input name="search" v-model="valueTosearch" @keyup="search_peapole"   type="search" placeholder="cerca o inizia una nuova chat" >
                     </div>
                     <div id="chat_pepole">
                         <!-- @click="classeattiva(index)" usato per aggiungere osservatore, :class="contatti== scheda_attiva ? 'active' :' ' " classe dinamica con condizione associata-->
@@ -60,7 +60,9 @@
                             
                             @click="classeattiva(index)"
                             :class="contatti== scheda_attiva ? 'active' :' ' "  
-                            v-for="(contatti,index)  in contacts" id="chat" :key="index">
+                            v-for="(contatti,index)  in contacts" id="chat" :key="index"
+                            v-show="contatti.visible"
+                            >
                             
                                 <img class="immagine" :src="contatti.avatar" alt="immagine1">
                             

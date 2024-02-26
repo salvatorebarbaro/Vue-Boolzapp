@@ -224,31 +224,31 @@ createApp({
         this.nuovo_messaggio_digitato=" ";
         
         },
-        search_peapole(valueTosearch)
+        search_peapole()
         {
-            // convertiamo tutto in minuscolo i valori del carattere che cerchiamo per evitare problemi
-            const lowerValueToSearch= valueTosearch.toLowerCase();
+            // prendiamo il valore di input
+            let inputText=this;
 
-            // scorre per tutti i contatti
-            for(let i=0;i<contacts.length;i++)
-    
-            {
-                // otteniamo il contatto su cui siamo dell'array dai contatti
-                const contact= this.contacts[i];
-
-                // conversione nome dell'utente corrente per fare un confronto
-                const lowername= this.contatti.name.toLowerCase();
-
-
-                if(lowername.include(lowerValueToSearch))
+            // CICLIAMO PER OGNI VALORE IN CONTACTS
+            this.contacts.forEach((element) => {
+            
+            let inputValue=inputText.valueTosearch;
+                
+                // CONFRONTO IGNORANDO MAIUSCOLE E MINUSCOLE SE PRESENTE VALORE CORRETTO
+                if(element.name.toLowerCase().includes(inputValue.toLowerCase()))
                 {
-                    contact.active=true;
+                    // ELEMENTO VISIBILE
+                    element.visible=true;
                 }
                 else
                 {
-                    contact.active=false;
+                    // ELEMENTO NON VISIBILE
+                    element.visible=false;
                 }
-            }
+
+                
+            });
+            
         }
 
         
