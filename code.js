@@ -169,7 +169,7 @@ createApp({
                 }
             ],
             
-
+            nuovo_messaggio_digitato:"",
             scheda_attiva:{},
         }
     },
@@ -185,6 +185,22 @@ createApp({
             // this.activeContactIndex = index;
             this.scheda_attiva= this.contacts[index]
 
+        },
+        add_message(nuovo_messaggio_digitato)
+        {
+            // aggiunta all'arry messages
+            this.scheda_attiva.messages.push(
+                {
+                    // il messaggio sarà il valore che inseriamo
+                    message:this.nuovo_messaggio_digitato,
+                    // stato del messaggio per lo stile
+                    status:'sent',
+                     // data del messaggio usando la libreria luxon inserita nella pagina html
+                    //  abbiamo imposatto la localita in italiano
+                    // successivamente abbiamo impostato che ci restituisse la data abbreviata
+                    date :window.luxon.DateTime.now().setLocale('it').toLocaleString(window.luxon.DateTime.DATETIME_SHORT)
+
+                })
         }
         
     },

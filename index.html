@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./style.css">
     <!-- fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
 </head>
 <body>
     <!-- VUE 3 -->
@@ -96,14 +98,14 @@
                                 <div>{{currentmessage.message}}</div>
                                 <!-- mostro in pagina in modo dinamico i messaggi all'interno di currentmessage della conversazione attiva -->
                                 <div id="ora">{{currentmessage.date}}</div>
-                                                        
+                                
                             </div>
                         </div>
                         
                     </div>
                     <div id="message_bar">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="scrivi messaggio">
+                        <input  @keyup.enter="add_message(nuovo_messaggio_digitato)" v-model="nuovo_messaggio_digitato" type="text" placeholder="scrivi messaggio">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
