@@ -181,7 +181,7 @@ createApp({
     methods: {
         classeattiva(index)
         {
-            // passiamo l'index della chat che passiamo 
+            // passiamo l'index della chat che è presente in pagina 
             // this.activeContactIndex = index;
             this.scheda_attiva= this.contacts[index]
 
@@ -222,7 +222,12 @@ createApp({
                 1000)
         this.nuovo_messaggio_digitato=" ";
         
+        },
+        search_peapole(nameTosearch)
+        {
+            
         }
+
         
     },
 }).mount('#app');

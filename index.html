@@ -66,7 +66,7 @@
                             
                             <div id="text">
                                 <div id="name_users"><strong>{{ contatti.name }}</strong></div>
-                                <div id="last_message">Ultimo messaggio inviato</div>
+                                <div id="last_message">{{contatti.messages[contatti.messages.length-1].message}} {{contatti.messages[contatti.messages.length-1].date}}</div>
                                 <div id="time">12:00</div>
                             </div>
                         </div>

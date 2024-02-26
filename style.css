@@ -189,6 +189,11 @@ body{font-family: sans-serif;}
     flex-direction: column;
     gap: 10px;
 }
+#last_message
+{
+    font-size: 10px;
+    color: #BBB8BE;
+}
 #time
 {
     position: absolute;
