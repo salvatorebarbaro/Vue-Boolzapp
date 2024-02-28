@@ -19,11 +19,11 @@
     <!-- VUE 3 -->
     <script src="https://unpkg.com/vue@3"></script>
 
-    <div id="app">
+    <div id="app" >
         <div id="back_top"></div>
         <div id="back_bottom"></div>
-        <div id="ui_container">
-            <div id="ui">
+        <div id="ui_container" >
+            <div id="ui" :class="{'TestoPiuGrande' : isClick}">
                 <aside id="sidebar">
                     <div id="container_user">
                         <div id="user">
@@ -31,9 +31,32 @@
                             <strong>Sofia</strong>
                         </div>
                         <div id="user_button">
+                            <i @click="OpenPopup('zoom')" class="fa-solid fa-magnifying-glass"></i>
+                            <div v-if="isPopupisVisibleZoom" class="Popup">
+                                <form>
+                                    <div id="ContainerButtonPopupZoom">
+                                        <button type="button" @click="AumentaDiDimesione()"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                                        <button type="button" @click="DiminuisciDiDimesione()"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                                        <button @click="ClosePopup()">Chiudi</button>
+                                    </div>
+                                </form>
+                            </div>
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i @click="OpenPopup" class="fa-solid fa-ellipsis-vertical"></i>
+                            <!-- elementi del Popup -->
+                            <div v-if="isPopupisVisible" class="Popup">
+                                <form>
+                                    <input type="text" id="NamePopup" name="Nome nuova conversazione" placeholder="Inserisci il nome utente" v-model="NomeNuovoUtente">
+                                    <input type="text" id="IndirizzoImg" name="indirizzo img"  placeholder="Inserisci indirizzo img" v-model="ImgNuovoUtente">
+                                    <div id="ContainerButtonPopup">
+                                        <button @click="Adduser(NomeNuovoUtente,ImgNuovoUtente)" >Procedi</button>
+                                        <button @click="ClosePopup">Chiudi</button>
+                                    </div>
+                                    
+
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div id="section_notification">
@@ -114,6 +137,8 @@
         </div>
         </div>
         
+        
+                
         
     
     

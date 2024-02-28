@@ -172,6 +172,10 @@ createApp({
             nuovo_messaggio_digitato:"",
             scheda_attiva:{},
             valueTosearch:"",
+            isPopupisVisible:false,
+            isPopupisVisibleZoom:false,
+            isClick:false,
+
         }
     },
     mounted() {
@@ -233,7 +237,7 @@ createApp({
             this.contacts.forEach((element) => {
             
             let inputValue=inputText.valueTosearch;
-                
+              
                 // CONFRONTO IGNORANDO MAIUSCOLE E MINUSCOLE SE PRESENTE VALORE CORRETTO
                 if(element.name.toLowerCase().includes(inputValue.toLowerCase()))
                 {
@@ -249,7 +253,61 @@ createApp({
                 
             });
             
+        },
+        // funzione per gestire apertura popup
+        OpenPopup(type)
+        {
+            if(type== 'zoom')
+            {
+                this.isPopupisVisibleZoom=true;
+            }
+            else
+            {
+                this.isPopupisVisible=true;
+            }
+        },
+        // funzione per gestire chiusura popup
+        ClosePopup(type)
+        {
+            // this.isPopupisVisible=false;
+            if(type== 'zoom')
+            {
+                this.isPopupisVisibleZoom=false;
+            }
+            else
+            {
+                this.isPopupisVisible=false;
+            }
+        },
+        Adduser(NomeNuovoUtente,ImgNuovoUtente)
+        {
+            
+            
+
+            const NewUser={
+                name:NomeNuovoUtente,
+                avatar:ImgNuovoUtente,
+                visible:true,
+
+            }
+           
+            this.contacts.push(NewUser);
+            
+
+            this.isPopupisVisible=false;
+            console.log(this.contacts)
+        },
+        AumentaDiDimesione()
+        {
+            this.isClick=true;
+        },
+        DiminuisciDiDimesione()
+        {
+            this.isClick=false;
         }
+
+        
+
 
         
     },
