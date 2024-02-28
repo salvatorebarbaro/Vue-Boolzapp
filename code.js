@@ -257,25 +257,30 @@ createApp({
         // funzione per gestire apertura popup
         OpenPopup(type)
         {
+            // apre il popup in base al tipo facendo un controllo
             if(type== 'zoom')
             {
+                // se è isPopupisVisibleZoom diventa true e quindi visibile
                 this.isPopupisVisibleZoom=true;
             }
             else
             {
+                // senno apre l'altro popup
                 this.isPopupisVisible=true;
             }
         },
         // funzione per gestire chiusura popup
         ClosePopup(type)
         {
-            // this.isPopupisVisible=false;
+            
             if(type== 'zoom')
             {
+                // se è isPopupisVisibleZoom diventa false e quindi invisibile
                 this.isPopupisVisibleZoom=false;
             }
             else
             {
+                // senno chiude l'altro popup
                 this.isPopupisVisible=false;
             }
         },
@@ -299,10 +304,12 @@ createApp({
         },
         AumentaDiDimesione()
         {
+            // funzione per associare la classe del font quando zoomiamo
             this.isClick=true;
         },
         DiminuisciDiDimesione()
         {
+             // funzione per rimuovere la classe del font quando zoomiamo
             this.isClick=false;
         }
 
